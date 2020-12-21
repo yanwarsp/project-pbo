@@ -1,5 +1,7 @@
 package com.pboreg;
 
+// Class buat nampung perhitungan di halaman Buku Nilai dan Indeks Prestasi
+
 public class Kalkulasi {
 
     public double absen, tugas, uts, uas, pAbsen, pTugas, pUts, pUas, nilaiAkhir;
