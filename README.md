@@ -18,4 +18,5 @@ Tampilan awal terdapat 4 buah menu yaitu :
 
 > Rumus Nilai Mata Kuliah
 p = persentase
+
 nilaiAkhir = (absen/16*100*pAbsen/100) + (tugas*pTugas/100) + (uts*pUts/100) + (uas*pUas/100)
