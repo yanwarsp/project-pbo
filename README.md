@@ -1,7 +1,7 @@
 # project-pbo
 Project UAS Pemrograman Berorientasi Objek 
 
-## Aplikasi Simulasi Penilaian dan Menghitung Index Prestasi
+## Aplikasi Simulasi Penilaian Mata Kuliah dan Menghitung Indeks Prestasi
 
 > Requirements
 - JDK 8
