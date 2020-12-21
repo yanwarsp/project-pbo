@@ -12,7 +12,7 @@ Project UAS Pemrograman Berorientasi Objek
 > Gambaran Aplikasi
 Tampilan awal terdapat 4 buah menu yaitu :
 - Buku Nilai
-- Indeks Presasi
+- Indeks Prestasi
 - Bantuan
 - Tentang Kami
 
