@@ -24,12 +24,14 @@
       <TableView fx:id="tableNilaiMhs" layoutX="25.0" layoutY="172.0" prefHeight="339.0" prefWidth="770.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
         <columns>
           <TableColumn fx:id="columnNIM" prefWidth="148.0" text="NIM" />
-          <TableColumn fx:id="columnNama" prefWidth="278.0" text="Nama" />
-           <TableColumn fx:id="columnAbsen" prefWidth="89.0" text="Kehardiran" />
+          <TableColumn fx:id="columnNama" prefWidth="286.0" text="Nama" />
+           <TableColumn fx:id="columnAbsen" prefWidth="81.0" text="Kehadiran" />
            <TableColumn fx:id="columnTugas" prefWidth="62.0" text="Tugas" />
            <TableColumn fx:id="columnUTS" prefWidth="51.0" text="UTS" />
            <TableColumn fx:id="columnUAS" prefWidth="51.0" text="UAS" />
            <TableColumn fx:id="columnNilAkhir" prefWidth="90.0" text="Nilai Akhir" />
+
+
         </columns>
       </TableView>
       <Label layoutX="227.0" layoutY="70.0" text="Nama Mahasiswa" />
