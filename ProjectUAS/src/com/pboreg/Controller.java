@@ -18,7 +18,7 @@ public class Controller {
     public Label labelNotif;
 
     private KoneksiDB konekDB = new KoneksiDB();
-    private Kalkulasi kalkulasi = new Kalkulasi();
+    public Kalkulasi itung = new Kalkulasi();
 
     //gonta ganti scene
     public void menuNilaiClick() throws Exception {
@@ -77,7 +77,8 @@ public class Controller {
         double pUts = Double.parseDouble(getPrsnUTS);
         double pUas = Double.parseDouble(getPrsnUAS);
 
-        double nilaiAkhir = (absen/16*100*pAbsen/100) + (tugas*pTugas/100) + (uts*pUts/100) + (uas*pUas/100);
+        double nilaiAkhir = itung.ngitung(absen, pAbsen, tugas, pTugas, uts, pUts, uas, pUas);
+//                (absen/14*100*pAbsen/100) + (tugas*pTugas/100) + (uts*pUts/100) + (uas*pUas/100);
         System.out.println(nilaiAkhir);
         String query = "INSERT INTO nilaimhs(nimmhs,namamhs,kehadiran,tugas,uts,uas,nilaiakhir) VALUES('" + getNim + "','" + getNama + "','" + absen + "','" + tugas + "','" + uts + "','" + uas + "','" + nilaiAkhir + "')";
         int hasil = konekDB.manipulasiData(query);
