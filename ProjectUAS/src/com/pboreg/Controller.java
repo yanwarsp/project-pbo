@@ -5,11 +5,22 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class Controller {
-    public Button menuNilaiMhs, menuIP, menuBantuan, menuTentang, home;
 
+    public Button menuNilaiMhs, menuIP, menuBantuan, menuTentang, home; // gonta ganti scene
+    public TextField textNIM, textNama, textAbsen, textTugas, textUTS, textUAS, textPersenAbsen, textPersenTugas, textPersenUTS, textPersenUAS;  // id textfield yang ada di menu pertama
+    public TableView<String> tableNilaiMhs; // id tabel nilai yang ada di menu pertama
+    public Label labelNotif;
+
+    private KoneksiDB konekDB = new KoneksiDB();
+    private Kalkulasi kalkulasi = new Kalkulasi();
+
+    //gonta ganti scene
     public void menuNilaiClick() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("nilaimhs.fxml"));
 
@@ -43,5 +54,41 @@ public class Controller {
 
         Stage window = (Stage) home.getScene().getWindow();
         window.setScene(new Scene(root));
+    }
+
+    //fungsi & method yang ada di menu pertama (nilai matkul)
+    public void buttonTambahNIlaiClick(ActionEvent actionEvent) {
+        String getNim = textNIM.getText();
+        String getNama = textNama.getText();
+        String getAbsen = textAbsen.getText();
+        String getTugas = textTugas.getText();
+        String getUTS = textUTS.getText();
+        String getUAS = textUAS.getText();
+        String getPrsnAbsen = textPersenAbsen.getText();
+        String getPrsnTugas = textPersenTugas.getText();
+        String getPrsnUTS = textPersenUTS.getText();
+        String getPrsnUAS = textPersenUAS.getText();
+        double absen = Double.parseDouble(getAbsen);
+        double tugas = Double.parseDouble(getTugas);
+        double uts = Double.parseDouble(getUTS);
+        double uas = Double.parseDouble(getUAS);
+        double pAbsen = Double.parseDouble(getPrsnAbsen);
+        double pTugas = Double.parseDouble(getPrsnTugas);
+        double pUts = Double.parseDouble(getPrsnUTS);
+        double pUas = Double.parseDouble(getPrsnUAS);
+
+        double nilaiAkhir = (absen/16*100*pAbsen/100) + (tugas*pTugas/100) + (uts*pUts/100) + (uas*pUas/100);
+        System.out.println(nilaiAkhir);
+        String query = "INSERT INTO nilaimhs(nimmhs,namamhs,kehadiran,tugas,uts,uas,nilaiakhir) VALUES('" + getNim + "','" + getNama + "','" + absen + "','" + tugas + "','" + uts + "','" + uas + "','" + nilaiAkhir + "')";
+        int hasil = konekDB.manipulasiData(query);
+        if (hasil == 1) {
+            System.out.println("Data berhasil dimasukan");
+            labelNotif.setText("Data berhasil dimasukan");
+        }
+
+    }
+
+    public void buttonHapusNilaiClick(ActionEvent actionEvent) {
+        // belum bikin gan
     }
 }

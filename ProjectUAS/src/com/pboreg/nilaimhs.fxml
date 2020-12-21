@@ -15,38 +15,49 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="home" layoutX="14.0" layoutY="508.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="16.0" prefWidth="87.0" style="-fx-background-color: #2ECC71;" text="Home" textFill="WHITE">
+      <Button fx:id="home" layoutX="14.0" layoutY="527.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="16.0" prefWidth="87.0" style="-fx-background-color: #2ECC71;" text="Home" textFill="WHITE" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Label layoutX="65.0" layoutY="78.0" text="NIM" />
-      <TableView layoutX="25.0" layoutY="147.0" prefHeight="348.0" prefWidth="734.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+      <Label layoutX="65.0" layoutY="70.0" text="NIM" />
+      <TableView fx:id="tableNilaiMhs" layoutX="25.0" layoutY="172.0" prefHeight="339.0" prefWidth="770.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="NIM" />
-          <TableColumn prefWidth="224.0" text="Nama" />
+          <TableColumn fx:id="columnNIM" prefWidth="148.0" text="NIM" />
+          <TableColumn fx:id="columnNama" prefWidth="278.0" text="Nama" />
+           <TableColumn fx:id="columnAbsen" prefWidth="89.0" text="Kehardiran" />
+           <TableColumn fx:id="columnTugas" prefWidth="62.0" text="Tugas" />
+           <TableColumn fx:id="columnUTS" prefWidth="51.0" text="UTS" />
+           <TableColumn fx:id="columnUAS" prefWidth="51.0" text="UAS" />
+           <TableColumn fx:id="columnNilAkhir" prefWidth="90.0" text="Nilai Akhir" />
         </columns>
       </TableView>
-      <Label layoutX="227.0" layoutY="78.0" text="Nama Mahasiswa" />
-      <Label layoutX="430.0" layoutY="78.0" text="Kehadiran" />
-      <Label layoutX="515.0" layoutY="78.0" text="Tugas" />
-      <Label layoutX="577.0" layoutY="78.0" text="UTS" />
-      <Label layoutX="629.0" layoutY="78.0" text="UAS" />
-      <TextField layoutX="14.0" layoutY="103.0" prefHeight="31.0" prefWidth="128.0" AnchorPane.leftAnchor="15.0" />
-      <TextField layoutX="157.0" layoutY="103.0" prefHeight="31.0" prefWidth="256.0" />
-      <TextField layoutX="426.0" layoutY="103.0" prefHeight="31.0" prefWidth="74.0" />
-      <TextField layoutX="512.0" layoutY="103.0" prefHeight="31.0" prefWidth="46.0" />
-      <TextField layoutX="567.0" layoutY="103.0" prefHeight="31.0" prefWidth="46.0" />
-      <TextField layoutX="620.0" layoutY="103.0" prefHeight="31.0" prefWidth="46.0" />
-      <Button layoutX="699.0" layoutY="100.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="87.0" style="-fx-background-color: #2ECC71;" text="Tambah" textFill="WHITE" AnchorPane.rightAnchor="14.0">
+      <Label layoutX="227.0" layoutY="70.0" text="Nama Mahasiswa" />
+      <Label layoutX="430.0" layoutY="70.0" text="Kehadiran" />
+      <Label layoutX="515.0" layoutY="70.0" text="Tugas" />
+      <Label layoutX="577.0" layoutY="70.0" text="UTS" />
+      <Label layoutX="629.0" layoutY="70.0" text="UAS" />
+      <TextField fx:id="textNIM" layoutX="15.0" layoutY="95.0" prefHeight="31.0" prefWidth="128.0" AnchorPane.leftAnchor="15.0" />
+      <TextField fx:id="textNama" layoutX="157.0" layoutY="95.0" prefHeight="31.0" prefWidth="256.0" />
+      <TextField fx:id="textAbsen" alignment="CENTER_RIGHT" layoutX="426.0" layoutY="95.0" prefHeight="31.0" prefWidth="74.0" />
+      <TextField fx:id="textTugas" alignment="CENTER_RIGHT" layoutX="512.0" layoutY="95.0" prefHeight="31.0" prefWidth="46.0" />
+      <TextField fx:id="textUTS" alignment="CENTER_RIGHT" layoutX="567.0" layoutY="95.0" prefHeight="31.0" prefWidth="46.0" />
+      <TextField fx:id="textUAS" alignment="CENTER_RIGHT" layoutX="620.0" layoutY="95.0" prefHeight="31.0" prefWidth="46.0" />
+      <Button fx:id="buttonTambahNilai" layoutX="699.0" layoutY="92.0" mnemonicParsing="false" onAction="#buttonTambahNIlaiClick" prefHeight="16.0" prefWidth="87.0" style="-fx-background-color: #2ECC71;" text="Tambah" textFill="WHITE" AnchorPane.rightAnchor="15.0">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="699.0" layoutY="511.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="87.0" style="-fx-background-color: #D91E18;" text="Hapus" textFill="WHITE">
+      <Button fx:id="buttonHapusNilai" layoutX="699.0" layoutY="534.0" mnemonicParsing="false" onAction="#buttonHapusNilaiClick" prefHeight="16.0" prefWidth="87.0" style="-fx-background-color: #D91E18;" text="Hapus" textFill="WHITE" AnchorPane.rightAnchor="15.0">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
+      <Label layoutX="285.0" layoutY="135.0" prefHeight="21.0" prefWidth="171.0" text="Persentase Penilaian (%) :" />
+      <TextField fx:id="textPersenAbsen" alignment="CENTER_RIGHT" layoutX="454.0" layoutY="130.0" prefHeight="31.0" prefWidth="46.0" />
+      <TextField fx:id="textPersenTugas" alignment="CENTER_RIGHT" layoutX="512.0" layoutY="130.0" prefHeight="31.0" prefWidth="46.0" />
+      <TextField fx:id="textPersenUTS" alignment="CENTER_RIGHT" layoutX="568.0" layoutY="130.0" prefHeight="31.0" prefWidth="46.0" />
+      <TextField fx:id="textPersenUAS" alignment="CENTER_RIGHT" layoutX="620.0" layoutY="130.0" prefHeight="31.0" prefWidth="46.0" />
+      <Label fx:id="labelNotif" layoutX="15.0" layoutY="135.0" textFill="#00b200" />
    </children>
 </AnchorPane>
