@@ -8,3 +8,11 @@ Project UAS Pemrograman Berorientasi Objek
 - SceneBuilder
 - Laragon
 - JavaFX SDK
+
+> Gambaran Aplikasi
+Tampilan awal terdapat 4 buah menu yaitu :
+- Buku Nilai
+- Indeks Presasi
+- Bantuan
+- Tentang Kami
+
