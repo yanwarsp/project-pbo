@@ -27,6 +27,16 @@ public class KoneksiDB {
         }
     }
 
+    public ResultSet getData2(String query) {
+        try {
+            st = conn.createStatement();
+            return st.executeQuery(query);
+        } catch (Exception e) {
+            System.out.println("Error : " + e.getMessage());
+            return null;
+        }
+    }
+
     public int manipulasiData(String query) {
         try {
             st = conn.createStatement();
