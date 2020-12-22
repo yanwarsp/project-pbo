@@ -5,6 +5,7 @@ public class Kalkulasi {
     public double absen, tugas, uts, uas, pAbsen, pTugas, pUts, pUas, nilaiAkhir;
     public double kehadiran;
     public double persentase;
+    public double sks, nilai2, nilaiAkhir2;
 
     Kalkulasi(){
         this.kehadiran = 14;
@@ -18,11 +19,18 @@ public class Kalkulasi {
         this.pUts = 0;
         this.pUas = 0;
         this.nilaiAkhir = 0;
+        this.sks = 0;
+        this.nilai2 = 0;
+        this.nilaiAkhir2 = 0;
     }
 
     public double penilaianMhs(double absen, double pAbsen, double tugas, double pTugas, double uts, double pUts, double uas, double pUas){
         return nilaiAkhir = (absen / kehadiran * pAbsen / persentase)
                 + (tugas * pTugas / persentase) + (uts * pUts / persentase)
                 + (uas * pUas / persentase);
+    }
+
+    public double hitungIp(double sks, double nilai2){
+        return nilaiAkhir2 = nilai2 / sks;
     }
 }
