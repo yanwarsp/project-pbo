@@ -23,6 +23,8 @@ public class Controller implements Initializable{
     DecimalFormat de = new DecimalFormat("#.##"); //  format desimal 2 angka dibelakang koma
     public Button menuNilaiMhs, menuIP, menuBantuan, menuTentang, home; // gonta ganti scene
     public TextField textNIM, textNama, textAbsen, textTugas, textUTS, textUAS, textPersenAbsen, textPersenTugas, textPersenUTS, textPersenUAS;  // id textfield yang ada di menu pertama
+    public TextField sksmk, kodemk, namamk, nilaimk, total;
+    public Button tambah;
     public Label labelNotif;
 
     // ini untuk membuat tabel pada menu pertama
@@ -108,9 +110,7 @@ public class Controller implements Initializable{
             System.out.println("Data berhasil dimasukan");
             labelNotif.setText("Data berhasil dimasukan");
             tableViewNilaiMhs();
-
         }
-
     }
 
     public void buttonHapusNilaiClick(ActionEvent actionEvent) {
@@ -142,8 +142,17 @@ public class Controller implements Initializable{
             }
         } catch (Exception e) {
             System.out.println(e);
-
         }
     }
 
+    public void tambahNilaiMk(ActionEvent actionEvent) {
+        String getSks = sksmk.getText();
+        String getMk = namamk.getText();
+        String getKodeMk = kodemk.getText();
+        String getNilai = nilaimk.getText();
+        double getSks2 = Double.parseDouble(getSks);
+        double getNilai2 = Double.parseDouble(getNilai);
+        double haha = kalkulasi.hitungIp(getSks2, getNilai2);
+        total.setText(String.valueOf(haha));
+    }
 }
