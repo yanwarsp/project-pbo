@@ -23,9 +23,9 @@ public class Controller implements Initializable{
     DecimalFormat de = new DecimalFormat("#.##"); //  format desimal 2 angka dibelakang koma
     public Button menuNilaiMhs, menuIP, menuBantuan, menuTentang, home; // gonta ganti scene
     public TextField textNIM, textNama, textAbsen, textTugas, textUTS, textUAS, textPersenAbsen, textPersenTugas, textPersenUTS, textPersenUAS;  // id textfield yang ada di menu pertama
-    public TextField sksmk, kodemk, namamk, nilaimk, total;
+    public TextField sksmk, kodemk, namamk, nilaimk;
     public Button tambah;
-    public Label labelNotif;
+    public Label labelNotif, bobot;
 
     // ini untuk membuat tabel pada menu pertama
     public TableView<OutputNilaiMhs> tableNilaiMhs;
@@ -36,6 +36,14 @@ public class Controller implements Initializable{
     public TableColumn<OutputNilaiMhs, SimpleIntegerProperty> columnUTS;
     public TableColumn<OutputNilaiMhs, SimpleIntegerProperty> columnUAS;
     public TableColumn<OutputNilaiMhs, SimpleDoubleProperty> columnNilAkhir;
+
+    // ini untuk tabel menu indeks prestasi
+    public TableView<OutputIndeksPrestasi> tabelIndeksPrestasi;
+    public TableColumn<OutputIndeksPrestasi, SimpleIntegerProperty> kolomKode;
+    public TableColumn<OutputIndeksPrestasi, SimpleStringProperty> kolomNamaMK;
+    public TableColumn<OutputIndeksPrestasi, SimpleIntegerProperty> kolomSKS;
+    public TableColumn<OutputIndeksPrestasi, SimpleIntegerProperty> kolomNilai;
+    public TableColumn<OutputIndeksPrestasi, SimpleDoubleProperty> kolomBobot;
 
     private KoneksiDB konekDB = new KoneksiDB();
     private Kalkulasi kalkulasi = new Kalkulasi();
@@ -145,14 +153,58 @@ public class Controller implements Initializable{
         }
     }
 
-    public void tambahNilaiMk(ActionEvent actionEvent) {
+    public void tambahNilaiMK(ActionEvent actionEvent) {
         String getSks = sksmk.getText();
         String getMk = namamk.getText();
         String getKodeMk = kodemk.getText();
         String getNilai = nilaimk.getText();
-        double getSks2 = Double.parseDouble(getSks);
-        double getNilai2 = Double.parseDouble(getNilai);
-        double haha = kalkulasi.hitungIp(getSks2, getNilai2);
-        total.setText(String.valueOf(haha));
+        String getBobot = bobot.getText();
+        int kodeMk2 = Integer.parseInt(getKodeMk);
+        int sks2 = Integer.parseInt(getSks);
+        int nilai2 = Integer.parseInt(getNilai);
+        double haha = kalkulasi.hitungIp(nilai2);
+        String cetak = "" + haha;
+        bobot.setText(cetak);
+        double a = Double.valueOf(cetak);
+
+        String query = "INSERT INTO indeksprestasi(kodemk,matkul,sks,nilai,bobot) VALUES('" + kodeMk2 + "','" + getMk + "', '" + sks2 + "' , '" + nilai2 + "','" + a + "')";
+        int hasil = konekDB.manipulasiData(query);
+        if (hasil == 1) {
+            System.out.println("Data berhasil dimasukan");
+            tableViewIndeksPrestasi();
+        }
+    }
+
+    private void tableViewIndeksPrestasi() {
+        kolomKode.setCellValueFactory(new PropertyValueFactory<>("kodeMk"));
+        kolomNamaMK.setCellValueFactory(new PropertyValueFactory<>("namaMk"));
+        kolomSKS.setCellValueFactory(new PropertyValueFactory<>("sks"));
+        kolomNilai.setCellValueFactory(new PropertyValueFactory<>("nilai"));
+        kolomBobot.setCellValueFactory(new PropertyValueFactory<>("bobot"));
+
+        try {
+            String query = "SELECT * FROM indeksprestasi";
+            ResultSet hasil = konekDB.getData2(query);
+            ObservableList<OutputIndeksPrestasi> outputIndeksPrestasi = FXCollections.observableArrayList();
+            tabelIndeksPrestasi.setItems(outputIndeksPrestasi);
+            while (hasil.next()) {
+                int kodeMk = hasil.getInt(2);
+                String namaMk = hasil.getString(3);
+                int sks = hasil.getInt(4);
+                int nilai = hasil.getInt(5);
+                double bobot = hasil.getDouble(6);
+                outputIndeksPrestasi.add(new OutputIndeksPrestasi(kodeMk, namaMk, sks, nilai, bobot));
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void clearTextField(ActionEvent actionEvent) {
+        kodemk.setText("");
+        namamk.setText("");
+        sksmk.setText("");
+        nilaimk.setText("");
+        bobot.setText("");
     }
 }
