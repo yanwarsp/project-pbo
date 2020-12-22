@@ -52,4 +52,6 @@ D 40.00 – 49.99 1
 
 Sangat Kurang
 
-(Tidak Lulus) E E < 40.00 0
+(Tidak Lulus) E
+
+E < 40.00 0
