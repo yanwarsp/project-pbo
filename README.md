@@ -1,7 +1,7 @@
-# project-pbo
+# Project-PBO
 Project UAS Pemrograman Berorientasi Objek 
 
-## Aplikasi Simulasi Penilaian Mata Kuliah dan Menghitung Indeks Prestasi
+## Aplikasi Simulasi Penilaian Mata Kuliah dan Menghitung Indeks Prestasi (NilaiKu)
 
 > Requirements
 - JDK 8
