@@ -11,22 +11,16 @@ public class OutputNilaiMhs {
     private IntegerProperty uas;
     private DoubleProperty nilaiAkhir;
 
-    public OutputNilaiMhs(String nim, String nama, int absen, int tugas, int uts, int uas, double nilaiAkhir) {
-        this.nim = new SimpleStringProperty(nim);
-        this.nama = new SimpleStringProperty(nama);
-        this.absen = new SimpleIntegerProperty(absen);
-        this.tugas = new SimpleIntegerProperty(tugas);
-        this.uts = new SimpleIntegerProperty(uts);
-        this.uas = new SimpleIntegerProperty(uas);
-        this.nilaiAkhir = new SimpleDoubleProperty(nilaiAkhir);
-    }
-
     public String getNim() {
         return nim.get();
     }
 
     public StringProperty nimProperty() {
         return nim;
+    }
+
+    public void setNim(String nim) {
+        this.nim.set(nim);
     }
 
     public String getNama() {
@@ -37,12 +31,20 @@ public class OutputNilaiMhs {
         return nama;
     }
 
+    public void setNama(String nama) {
+        this.nama.set(nama);
+    }
+
     public int getAbsen() {
         return absen.get();
     }
 
     public IntegerProperty absenProperty() {
         return absen;
+    }
+
+    public void setAbsen(int absen) {
+        this.absen.set(absen);
     }
 
     public int getTugas() {
@@ -53,12 +55,20 @@ public class OutputNilaiMhs {
         return tugas;
     }
 
+    public void setTugas(int tugas) {
+        this.tugas.set(tugas);
+    }
+
     public int getUts() {
         return uts.get();
     }
 
     public IntegerProperty utsProperty() {
         return uts;
+    }
+
+    public void setUts(int uts) {
+        this.uts.set(uts);
     }
 
     public int getUas() {
@@ -69,6 +79,10 @@ public class OutputNilaiMhs {
         return uas;
     }
 
+    public void setUas(int uas) {
+        this.uas.set(uas);
+    }
+
     public double getNilaiAkhir() {
         return nilaiAkhir.get();
     }
@@ -77,31 +91,17 @@ public class OutputNilaiMhs {
         return nilaiAkhir;
     }
 
-    public void setNim(String nim) {
-        this.nim.set(nim);
-    }
-
-    public void setNama(String nama) {
-        this.nama.set(nama);
-    }
-
-    public void setAbsen(int absen) {
-        this.absen.set(absen);
-    }
-
-    public void setTugas(int tugas) {
-        this.tugas.set(tugas);
-    }
-
-    public void setUts(int uts) {
-        this.uts.set(uts);
-    }
-
-    public void setUas(int uas) {
-        this.uas.set(uas);
-    }
-
     public void setNilaiAkhir(double nilaiAkhir) {
         this.nilaiAkhir.set(nilaiAkhir);
+    }
+
+    public OutputNilaiMhs(String nim, String nama, int absen, int tugas, int uts, int uas, double nilaiAkhir) {
+        this.nim = new SimpleStringProperty(nim);
+        this.nama = new SimpleStringProperty(nama);
+        this.absen = new SimpleIntegerProperty(absen);
+        this.tugas = new SimpleIntegerProperty(tugas);
+        this.uts = new SimpleIntegerProperty(uts);
+        this.uas = new SimpleIntegerProperty(uas);
+        this.nilaiAkhir = new SimpleDoubleProperty(nilaiAkhir);
     }
 }

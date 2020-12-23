@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #1DE9B6; -fx-border-color: black; -fx-border-width: 8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pboreg.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #1DE9B6; -fx-border-color: black; -fx-border-width: 8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pboreg.Controller2">
    <children>
       <Button fx:id="home" layoutX="704.0" layoutY="536.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="41.0" prefWidth="71.0" style="-fx-background-color: #2ECC71; -fx-border-color: black; -fx-border-width: 2;" text="Home" textFill="WHITE">
          <font>
@@ -29,13 +29,13 @@
             <Font size="14.0" />
          </font></Button>
       <TableView fx:id="tabelIndeksPrestasi" layoutX="61.0" layoutY="205.0" prefHeight="260.0" prefWidth="674.0" style="-fx-background-color: #A7FFEB; -fx-border-color: black; -fx-border-width: 3;">
-        <columns>
-          <TableColumn fx:id="kolomKode" prefWidth="116.99999237060547" text="Kode MK" />
-          <TableColumn fx:id="kolomNamaMK" prefWidth="292.0" text="Nama Mata Kuliah" />
+         <columns>
+            <TableColumn fx:id="kolomKode" prefWidth="116.99999237060547" text="Kode MK" />
+            <TableColumn fx:id="kolomNamaMK" prefWidth="292.0" text="Nama Mata Kuliah" />
             <TableColumn fx:id="kolomSKS" prefWidth="91.0" text="SKS" />
             <TableColumn fx:id="kolomNilai" prefWidth="91.0" text="NILAI" />
             <TableColumn fx:id="kolomBobot" prefWidth="82.0" text="BOBOT" />
-        </columns>
+         </columns>
       </TableView>
       <Label layoutX="50.0" layoutY="121.0" prefHeight="20.0" prefWidth="65.0" text="KODE MK">
          <font>
@@ -58,7 +58,7 @@
             <Font size="14.0" />
          </font></Label>
       <Label fx:id="bobot" alignment="CENTER" layoutX="478.0" layoutY="149.0" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 2;" />
-      <Button fx:id="clear" layoutX="688.0" layoutY="143.0" mnemonicParsing="false" onAction="#clearTextField" prefHeight="42.0" prefWidth="71.0" style="-fx-background-color: #00BFA5; -fx-border-color: black; -fx-border-width: 2;" text="CLEAR" textFill="WHITE">
+      <Button fx:id="clear" layoutX="688.0" layoutY="143.0" mnemonicParsing="false" onAction="#buttonHapusMkClick" prefHeight="42.0" prefWidth="71.0" style="-fx-background-color: #00BFA5; -fx-border-color: black; -fx-border-width: 2;" text="CLEAR" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
