@@ -19,3 +19,11 @@ Tampilan awal terdapat 4 buah menu yaitu :
 - Indeks Prestasi
 - Bantuan
 - Tentang Kami
+
+> Kelompok 6
+> Nama Kelompok
+-Kevin Christoper(2019071012)
+-Raflie Firmansyah(2019071017)
+-Yanwar Slamet Priadi(2019071024)
+-Muhammad Irhamsyah Ramadhan(2019071027)
+
