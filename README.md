@@ -1,4 +1,4 @@
-## Project-PBO
+# Project-PBO
 Project UAS Pemrograman Berorientasi Objek 
 
 ## Aplikasi Simulasi Penilaian Mata Kuliah dan Menghitung Indeks Prestasi (NilaiKu)
@@ -9,11 +9,11 @@ Project UAS Pemrograman Berorientasi Objek
 - Laragon
 - JavaFX SDK
 
-> Database project-pbo
+### Database project-pbo
 - Tabel 1 : nilaimhs
 - Tabel 2 : indeksprestasi
 
-> Gambaran Aplikasi
+### Gambaran Aplikasi
 Tampilan awal terdapat 4 buah menu yaitu :
 - Buku Nilai
 - Indeks Prestasi
@@ -22,10 +22,9 @@ Tampilan awal terdapat 4 buah menu yaitu :
 
 > Kelompok 6
 
-> Nama Kelompok
+### Nama Kelompok
 
 - Kevin Christoper(2019071012)
 - Raflie Firmansyah(2019071017)
 - Yanwar Slamet Priadi(2019071024)
 - Muhammad Irhamsyah Ramadhan(2019071027)
-
