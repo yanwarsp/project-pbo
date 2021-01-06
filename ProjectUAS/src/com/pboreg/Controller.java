@@ -109,14 +109,20 @@ public class Controller implements Initializable{
         }
     }
 
-    public void buttonEditNilaiClick(ActionEvent actionEvent) {
-
-    }
+   public void buttonEditNilaiClick(ActionEvent actionEvent) {
+//        String query = "UPDATE nilaimhs SET
+//        int hasil = konekDB.manipulasiData(query);
+    //    if (hasil == 1) {
+      //      System.out.println("Data Berhasil diedit");
+        //    labelNotif.setText("Data berhasil diedit");
+          //  tableViewNilaiMhs();
+        }
+ //   }
 
     public void buttonHapusNilaiClick(ActionEvent actionEvent) {
-        String getId = textNIM.getText();
-        if (!getId.isEmpty()) {
-            String query = "DELETE FROM nilaimhs WHERE id=" + getId;
+        String nim = textNIM.getText();
+        if (!nim.isEmpty()) {
+            String query = "DELETE FROM nilaimhs WHERE nimmhs=" + nim;
             int hasil = konekDB.manipulasiData(query);
             if (hasil == 1) {
                 System.out.println("Data berhasil dihapus");

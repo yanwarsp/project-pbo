@@ -53,16 +53,16 @@
             <Font size="16.0" />
          </font>
       </Button>
+      <Button fx:id="buttonEditNilai1" layoutX="600.0" layoutY="534.0" mnemonicParsing="false" onAction="#buttonEditNilaiClick" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: #F7CA18;" text="Edit" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
       <Label layoutX="285.0" layoutY="135.0" prefHeight="21.0" prefWidth="171.0" text="Persentase Penilaian (%) :" />
       <TextField fx:id="textPersenAbsen" alignment="CENTER_RIGHT" layoutX="454.0" layoutY="130.0" prefHeight="31.0" prefWidth="46.0" />
       <TextField fx:id="textPersenTugas" alignment="CENTER_RIGHT" layoutX="512.0" layoutY="130.0" prefHeight="31.0" prefWidth="46.0" />
       <TextField fx:id="textPersenUTS" alignment="CENTER_RIGHT" layoutX="568.0" layoutY="130.0" prefHeight="31.0" prefWidth="46.0" />
       <TextField fx:id="textPersenUAS" alignment="CENTER_RIGHT" layoutX="620.0" layoutY="130.0" prefHeight="31.0" prefWidth="46.0" />
       <Label fx:id="labelNotif" layoutX="15.0" layoutY="135.0" textFill="#00b200" />
-      <Button fx:id="buttonEditNilai1" layoutX="600.0" layoutY="534.0" mnemonicParsing="false" onAction="#buttonEditNilaiClick" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: #F7CA18;" text="Edit" textFill="WHITE">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>
