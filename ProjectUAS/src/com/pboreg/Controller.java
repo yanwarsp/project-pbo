@@ -52,28 +52,24 @@ public class Controller implements Initializable{
         Stage window = (Stage) menuNilaiMhs.getScene().getWindow();
         window.setScene(new Scene(root));
     }
-
     public void menuIPClick() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("indeksprestasi.fxml"));
 
         Stage window = (Stage) menuIP.getScene().getWindow();
         window.setScene(new Scene(root));
     }
-
     public void menuBantuan() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("bantuan.fxml"));
 
         Stage window = (Stage) menuBantuan.getScene().getWindow();
         window.setScene(new Scene(root));
     }
-
     public void menuTentang() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("tentangkami.fxml"));
 
         Stage window = (Stage) menuTentang.getScene().getWindow();
         window.setScene(new Scene(root));
     }
-
     public void homeClick() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
 
@@ -113,8 +109,22 @@ public class Controller implements Initializable{
         }
     }
 
+    public void buttonEditNilaiClick(ActionEvent actionEvent) {
+
+    }
+
     public void buttonHapusNilaiClick(ActionEvent actionEvent) {
-        // belum bikin gan
+        String getId = textNIM.getText();
+        if (!getId.isEmpty()) {
+            String query = "DELETE FROM nilaimhs WHERE id=" + getId;
+            int hasil = konekDB.manipulasiData(query);
+            if (hasil == 1) {
+                System.out.println("Data berhasil dihapus");
+
+                this.tableViewNilaiMhs();
+                labelNotif.setText("Data berhasil dihapus");
+            }
+        }
     }
 
     private void tableViewNilaiMhs() {
@@ -153,5 +163,30 @@ public class Controller implements Initializable{
         textPersenTugas.setText("");
         textPersenUTS.setText("");
         textPersenUAS.setText("");
+
+        tableNilaiMhs.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> showDetail(newValue));
     }
+
+    private void showDetail(OutputNilaiMhs nilaimhs) {
+        if (nilaimhs != null) {
+            textNIM.setText(nilaimhs.getNim());
+            textNama.setText(nilaimhs.getNama());
+            textAbsen.setText(nilaimhs.absenProperty().getValue().toString());
+            textTugas.setText(nilaimhs.tugasProperty().getValue().toString());
+            textUTS.setText(nilaimhs.utsProperty().getValue().toString());
+            textUAS.setText(nilaimhs.uasProperty().getValue().toString());
+
+        } else {
+            textNIM.setText("");
+            textNama.setText("");
+            textAbsen.setText("");
+            textTugas.setText("");
+            textUTS.setText("");
+            textUAS.setText("");
+            labelNotif.setText("");
+
+        }
+    }
+
 }
