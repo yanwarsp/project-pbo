@@ -8,33 +8,33 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #1DE9B6; -fx-border-color: black; -fx-border-width: 8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pboreg.Controller2">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pboreg.Controller2">
    <children>
-      <Button fx:id="home" layoutX="704.0" layoutY="536.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="41.0" prefWidth="71.0" style="-fx-background-color: #2ECC71; -fx-border-color: black; -fx-border-width: 2;" text="Home" textFill="WHITE">
+      <Button fx:id="home" layoutX="47.0" layoutY="528.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="41.0" prefWidth="71.0" style="-fx-background-color: #2ECC71;" text="Home" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="282.0" layoutY="26.0" prefHeight="75.0" prefWidth="285.0" style="-fx-background-color: #64FFDA; -fx-border-color: black; -fx-border-width: 5;" text="INDEKS PRESTASI">
+      <Label alignment="CENTER" layoutX="282.0" layoutY="26.0" prefHeight="75.0" prefWidth="285.0" text="INDEKS PRESTASI">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <TextField fx:id="kodemk" layoutX="55.0" layoutY="149.0" prefHeight="25.0" prefWidth="54.0" style="-fx-border-color: black; -fx-border-width: 2;" />
-      <TextField fx:id="namamk" layoutX="132.0" layoutY="149.0" prefHeight="29.0" prefWidth="170.0" style="-fx-border-color: black; -fx-border-width: 2;" />
-      <TextField fx:id="sksmk" layoutX="320.0" layoutY="150.0" prefHeight="25.0" prefWidth="60.0" style="-fx-border-width: 2; -fx-border-color: black;" />
-      <TextField fx:id="nilaimk" layoutX="396.0" layoutY="150.0" prefHeight="25.0" prefWidth="60.0" style="-fx-border-color: black; -fx-border-width: 2;" />
-      <Button fx:id="tambah" layoutX="591.0" layoutY="144.0" mnemonicParsing="false" onAction="#tambahNilaiMK" prefHeight="42.0" prefWidth="83.0" style="-fx-background-color: #00BFA5; -fx-border-color: black; -fx-border-width: 2;" text="TAMBAH" textFill="WHITE">
+      <TextField fx:id="kodemk" layoutX="55.0" layoutY="149.0" prefHeight="25.0" prefWidth="54.0" />
+      <TextField fx:id="namamk" layoutX="132.0" layoutY="149.0" prefHeight="29.0" prefWidth="170.0" />
+      <TextField fx:id="sksmk" layoutX="320.0" layoutY="150.0" prefHeight="25.0" prefWidth="60.0" />
+      <TextField fx:id="nilaimk" layoutX="396.0" layoutY="150.0" prefHeight="25.0" prefWidth="60.0" />
+      <Button fx:id="tambah" layoutX="591.0" layoutY="144.0" mnemonicParsing="false" onAction="#tambahNilaiMK" prefHeight="42.0" prefWidth="83.0" style="-fx-background-color: #2ECC71;" text="TAMBAH" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <TableView fx:id="tabelIndeksPrestasi" layoutX="61.0" layoutY="205.0" prefHeight="260.0" prefWidth="674.0" style="-fx-background-color: #A7FFEB; -fx-border-color: black; -fx-border-width: 3;">
+      <TableView fx:id="tabelIndeksPrestasi" layoutX="34.0" layoutY="205.0" prefHeight="256.0" prefWidth="740.0">
          <columns>
             <TableColumn fx:id="kolomKode" prefWidth="116.99999237060547" text="Kode MK" />
             <TableColumn fx:id="kolomNamaMK" prefWidth="292.0" text="Nama Mata Kuliah" />
             <TableColumn fx:id="kolomSKS" prefWidth="91.0" text="SKS" />
             <TableColumn fx:id="kolomNilai" prefWidth="91.0" text="NILAI" />
-            <TableColumn fx:id="kolomBobot" prefWidth="82.0" text="BOBOT" />
+            <TableColumn fx:id="kolomBobot" prefWidth="148.0" text="BOBOT" />
          </columns>
       </TableView>
       <Label layoutX="50.0" layoutY="121.0" prefHeight="20.0" prefWidth="65.0" text="KODE MK">
@@ -53,15 +53,11 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="507.0" layoutY="120.0" text="BOBOT">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label fx:id="bobot" alignment="CENTER" layoutX="478.0" layoutY="149.0" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 2;" />
-      <Button fx:id="clear" layoutX="688.0" layoutY="143.0" mnemonicParsing="false" onAction="#buttonHapusMkClick" prefHeight="42.0" prefWidth="71.0" style="-fx-background-color: #00BFA5; -fx-border-color: black; -fx-border-width: 2;" text="CLEAR" textFill="WHITE">
+      <Button fx:id="buttonHapusMK" layoutX="633.0" layoutY="486.0" mnemonicParsing="false" onAction="#buttonHapusMkClick" prefHeight="42.0" prefWidth="83.0" style="-fx-background-color: #D91E18;" text="Hapus" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
+      <Label fx:id="labelNotif" layoutX="17.0" layoutY="53.0" textFill="#00b200" />
    </children>
 </AnchorPane>

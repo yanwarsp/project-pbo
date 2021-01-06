@@ -151,7 +151,7 @@ public class Controller implements Initializable {
             if (hasil == 1) {
                 System.out.println("Data berhasil dihapus");
 
-                this.tableViewNilaiMhs();
+                tableViewNilaiMhs();
                 labelNotif.setText("Data berhasil dihapus");
             }
         }

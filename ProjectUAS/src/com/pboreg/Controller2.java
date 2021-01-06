@@ -24,7 +24,7 @@ public class Controller2 implements Initializable {
 
     DecimalFormat de = new DecimalFormat("#.##"); //  format desimal 2 angka dibelakang koma
     public TextField sksmk, kodemk, namamk, nilaimk;
-    public Label labelNotif, bobot;
+    public Label labelNotif;
     public Button home;
     // ini untuk tabel menu indeks prestasi
     public TableView<OutputIndeksPrestasi> tabelIndeksPrestasi;
@@ -54,18 +54,31 @@ public class Controller2 implements Initializable {
         String getMk = namamk.getText();
         String getSks = sksmk.getText();
         String getNilai = nilaimk.getText();
-        String getBobot = bobot.getText();
         int sks = Integer.parseInt(getSks);
         int nilai = Integer.parseInt(getNilai);
         double hasilBobot = kalkulasi.hitungIp(nilai);
-        String cetak = "" + hasilBobot;
-        bobot.setText(cetak);
+
+
 
         String query = "INSERT INTO indeksprestasi(kodemk,namamk,sks,nilai,bobot) VALUES('" + getKodeMk + "','" + getMk + "', '" + sks + "' , '" + nilai + "','" + hasilBobot + "')";
         int hasil = konekDB.manipulasiData(query);
         if (hasil == 1) {
             System.out.println("Data berhasil dimasukan");
             tableViewIndeksPrestasi();
+            labelNotif.setText("MK berhasil dimasukan");
+        }
+    }
+    public void buttonHapusMkClick(ActionEvent actionEvent) {
+        String kodeMK = kodemk.getText();
+        if (!kodeMK.isEmpty()) {
+            String query = "DELETE FROM indeksprestasi WHERE kodemk=" + kodeMK;
+            int hasil = konekDB.manipulasiData(query);
+            if (hasil == 1) {
+                System.out.println("MK berhasil dihapus");
+
+                tableViewIndeksPrestasi();
+                labelNotif.setText("MK berhasil dihapus");
+            }
         }
     }
 
@@ -96,11 +109,27 @@ public class Controller2 implements Initializable {
         namamk.setText("");
         sksmk.setText("");
         nilaimk.setText("");
-        bobot.setText("");
+
+        tabelIndeksPrestasi.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> showDetail(newValue));
     }
 
-    public void buttonHapusMkClick(ActionEvent actionEvent) {
+    private void showDetail(OutputIndeksPrestasi indeksprestasi) {
+        if (indeksprestasi != null) {
+            kodemk.setText(indeksprestasi.getKodeMk());
+            namamk.setText(indeksprestasi.getNamaMk());
+            sksmk.setText(indeksprestasi.sksProperty().getValue().toString());
+            nilaimk.setText(indeksprestasi.nilaiProperty().getValue().toString());
 
+
+        } else {
+            kodemk.setText("");
+            namamk.setText("");
+            sksmk.setText("");
+            nilaimk.setText("");
+
+        }
     }
+
 
 }
