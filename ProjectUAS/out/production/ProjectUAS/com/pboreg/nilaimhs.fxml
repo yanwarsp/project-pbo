@@ -53,7 +53,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="buttonEditNilai1" layoutX="600.0" layoutY="534.0" mnemonicParsing="false" onAction="#buttonEditNilaiClick" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: #F7CA18;" text="Edit" textFill="WHITE">
+      <Button fx:id="buttonEditNilai1" layoutX="600.0" layoutY="534.0" mnemonicParsing="false" onAction="#buttonEditNilaiClick" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: #F39C12;" text="Edit" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>

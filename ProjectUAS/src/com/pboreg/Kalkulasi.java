@@ -25,7 +25,7 @@ public class Kalkulasi {
     }
 
     public double penilaianMhs(double absen, double pAbsen, double tugas, double pTugas, double uts, double pUts, double uas, double pUas){
-        return nilaiAkhir = (absen / kehadiran * pAbsen / persentase)
+        return nilaiAkhir = (absen / kehadiran * persentase * pAbsen / persentase)
                 + (tugas * pTugas / persentase) + (uts * pUts / persentase)
                 + (uas * pUas / persentase);
     }

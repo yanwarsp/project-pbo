@@ -13,12 +13,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
 import java.net.URL;
 import java.sql.ResultSet;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable{
+public class Controller implements Initializable {
 
     DecimalFormat de = new DecimalFormat("#.##"); //  format desimal 2 angka dibelakang koma
     public Button menuNilaiMhs, menuIP, menuBantuan, menuTentang, home; // gonta ganti scene
@@ -36,7 +37,6 @@ public class Controller implements Initializable{
     public TableColumn<OutputNilaiMhs, SimpleDoubleProperty> columnNilAkhir;
 
 
-
     private KoneksiDB konekDB = new KoneksiDB();
     private Kalkulasi kalkulasi = new Kalkulasi();
 
@@ -52,24 +52,28 @@ public class Controller implements Initializable{
         Stage window = (Stage) menuNilaiMhs.getScene().getWindow();
         window.setScene(new Scene(root));
     }
+
     public void menuIPClick() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("indeksprestasi.fxml"));
 
         Stage window = (Stage) menuIP.getScene().getWindow();
         window.setScene(new Scene(root));
     }
+
     public void menuBantuan() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("bantuan.fxml"));
 
         Stage window = (Stage) menuBantuan.getScene().getWindow();
         window.setScene(new Scene(root));
     }
+
     public void menuTentang() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("tentangkami.fxml"));
 
         Stage window = (Stage) menuTentang.getScene().getWindow();
         window.setScene(new Scene(root));
     }
+
     public void homeClick() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
 
@@ -109,15 +113,35 @@ public class Controller implements Initializable{
         }
     }
 
-   public void buttonEditNilaiClick(ActionEvent actionEvent) {
-//        String query = "UPDATE nilaimhs SET
-//        int hasil = konekDB.manipulasiData(query);
-    //    if (hasil == 1) {
-      //      System.out.println("Data Berhasil diedit");
-        //    labelNotif.setText("Data berhasil diedit");
-          //  tableViewNilaiMhs();
+    public void buttonEditNilaiClick(ActionEvent actionEvent) {
+        String getNim = textNIM.getText();
+        String getAbsen = textAbsen.getText();
+        String getTugas = textTugas.getText();
+        String getUTS = textUTS.getText();
+        String getUAS = textUAS.getText();
+        String getPrsnAbsen = textPersenAbsen.getText();
+        String getPrsnTugas = textPersenTugas.getText();
+        String getPrsnUTS = textPersenUTS.getText();
+        String getPrsnUAS = textPersenUAS.getText();
+        double absen = Double.parseDouble(getAbsen);
+        double tugas = Double.parseDouble(getTugas);
+        double uts = Double.parseDouble(getUTS);
+        double uas = Double.parseDouble(getUAS);
+        double pAbsen = Double.parseDouble(getPrsnAbsen);
+        double pTugas = Double.parseDouble(getPrsnTugas);
+        double pUts = Double.parseDouble(getPrsnUTS);
+        double pUas = Double.parseDouble(getPrsnUAS);
+
+        double nilaiAkhir = kalkulasi.penilaianMhs(absen, pAbsen, tugas, pTugas, uts, pUts, uas, pUas);
+
+        String query = "UPDATE nilaimhs SET kehadiran='" + absen +"', tugas='" + tugas + "', uts='" + uts +"', uas='" + uas + "', nilaiakhir='" + de.format(nilaiAkhir) + "' WHERE nimmhs=" + getNim;
+        int hasil = konekDB.manipulasiData(query);
+        if (hasil == 1) {
+            System.out.println("Data Berhasil diedit");
+            labelNotif.setText("Data berhasil diedit");
+            tableViewNilaiMhs();
         }
- //   }
+    }
 
     public void buttonHapusNilaiClick(ActionEvent actionEvent) {
         String nim = textNIM.getText();
@@ -154,7 +178,7 @@ public class Controller implements Initializable{
                 int uts = hasil.getInt(6);
                 int uas = hasil.getInt(7);
                 double nilaiAkhir = hasil.getDouble(8);
-                outputNilMhs.add(new OutputNilaiMhs(nim,nama,absen,tugas,uts,uas,nilaiAkhir));
+                outputNilMhs.add(new OutputNilaiMhs(nim, nama, absen, tugas, uts, uas, nilaiAkhir));
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -165,10 +189,6 @@ public class Controller implements Initializable{
         textTugas.setText("");
         textUTS.setText("");
         textUAS.setText("");
-        textPersenAbsen.setText("");
-        textPersenTugas.setText("");
-        textPersenUTS.setText("");
-        textPersenUAS.setText("");
 
         tableNilaiMhs.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showDetail(newValue));
@@ -190,7 +210,6 @@ public class Controller implements Initializable{
             textTugas.setText("");
             textUTS.setText("");
             textUAS.setText("");
-            labelNotif.setText("");
 
         }
     }
