@@ -24,7 +24,7 @@ public class Controller implements Initializable {
     DecimalFormat de = new DecimalFormat("#.##"); //  format desimal 2 angka dibelakang koma
     public Button menuNilaiMhs, menuIP, menuBantuan, menuTentang, home; // gonta ganti scene
     public TextField textNIM, textNama, textAbsen, textTugas, textUTS, textUAS, textPersenAbsen, textPersenTugas, textPersenUTS, textPersenUAS;  // id textfield yang ada di menu pertama
-    public Label labelNotif;
+    public Label labelNotif, labelError;
 
     // ini untuk membuat tabel pada menu pertama
     public TableView<OutputNilaiMhs> tableNilaiMhs;
@@ -83,65 +83,76 @@ public class Controller implements Initializable {
 
     //fungsi & method yang ada di menu pertama (nilai matkul)
     public void buttonTambahNIlaiClick(ActionEvent actionEvent) {
-        String getNim = textNIM.getText();
-        String getNama = textNama.getText();
-        String getAbsen = textAbsen.getText();
-        String getTugas = textTugas.getText();
-        String getUTS = textUTS.getText();
-        String getUAS = textUAS.getText();
-        String getPrsnAbsen = textPersenAbsen.getText();
-        String getPrsnTugas = textPersenTugas.getText();
-        String getPrsnUTS = textPersenUTS.getText();
-        String getPrsnUAS = textPersenUAS.getText();
-        double absen = Double.parseDouble(getAbsen);
-        double tugas = Double.parseDouble(getTugas);
-        double uts = Double.parseDouble(getUTS);
-        double uas = Double.parseDouble(getUAS);
-        double pAbsen = Double.parseDouble(getPrsnAbsen);
-        double pTugas = Double.parseDouble(getPrsnTugas);
-        double pUts = Double.parseDouble(getPrsnUTS);
-        double pUas = Double.parseDouble(getPrsnUAS);
+        try {
+            String getNim = textNIM.getText();
+            String getNama = textNama.getText();
+            String getAbsen = textAbsen.getText();
+            String getTugas = textTugas.getText();
+            String getUTS = textUTS.getText();
+            String getUAS = textUAS.getText();
+            String getPrsnAbsen = textPersenAbsen.getText();
+            String getPrsnTugas = textPersenTugas.getText();
+            String getPrsnUTS = textPersenUTS.getText();
+            String getPrsnUAS = textPersenUAS.getText();
+            double absen = Double.parseDouble(getAbsen);
+            double tugas = Double.parseDouble(getTugas);
+            double uts = Double.parseDouble(getUTS);
+            double uas = Double.parseDouble(getUAS);
+            double pAbsen = Double.parseDouble(getPrsnAbsen);
+            double pTugas = Double.parseDouble(getPrsnTugas);
+            double pUts = Double.parseDouble(getPrsnUTS);
+            double pUas = Double.parseDouble(getPrsnUAS);
 
-        double nilaiAkhir = kalkulasi.penilaianMhs(absen, pAbsen, tugas, pTugas, uts, pUts, uas, pUas);
+            double nilaiAkhir = kalkulasi.penilaianMhs(absen, pAbsen, tugas, pTugas, uts, pUts, uas, pUas);
 
-        String query = "INSERT INTO nilaimhs(nimmhs,namamhs,kehadiran,tugas,uts,uas,nilaiakhir) VALUES('" + getNim + "','" + getNama + "','" + absen + "','" + tugas + "','" + uts + "','" + uas + "','" + de.format(nilaiAkhir) + "')";
-        int hasil = konekDB.manipulasiData(query);
-        if (hasil == 1) {
-            System.out.println("Data berhasil dimasukan");
-            labelNotif.setText("Data berhasil dimasukan");
-            tableViewNilaiMhs();
+            String query = "INSERT INTO nilaimhs(nimmhs,namamhs,kehadiran,tugas,uts,uas,nilaiakhir) VALUES('" + getNim + "','" + getNama + "','" + absen + "','" + tugas + "','" + uts + "','" + uas + "','" + de.format(nilaiAkhir) + "')";
+            int hasil = konekDB.manipulasiData(query);
+            if (hasil == 1) {
+                System.out.println("Data berhasil dimasukan");
+                labelNotif.setText("Data berhasil dimasukan");
+                tableViewNilaiMhs();
+            }
+        } catch (Exception e) {
+            System.out.println("Harap isi semua field yang kosong");
+            labelError.setText("Harap isi semua field yang kosong");
         }
     }
 
     public void buttonEditNilaiClick(ActionEvent actionEvent) {
-        String getNim = textNIM.getText();
-        String getAbsen = textAbsen.getText();
-        String getTugas = textTugas.getText();
-        String getUTS = textUTS.getText();
-        String getUAS = textUAS.getText();
-        String getPrsnAbsen = textPersenAbsen.getText();
-        String getPrsnTugas = textPersenTugas.getText();
-        String getPrsnUTS = textPersenUTS.getText();
-        String getPrsnUAS = textPersenUAS.getText();
-        double absen = Double.parseDouble(getAbsen);
-        double tugas = Double.parseDouble(getTugas);
-        double uts = Double.parseDouble(getUTS);
-        double uas = Double.parseDouble(getUAS);
-        double pAbsen = Double.parseDouble(getPrsnAbsen);
-        double pTugas = Double.parseDouble(getPrsnTugas);
-        double pUts = Double.parseDouble(getPrsnUTS);
-        double pUas = Double.parseDouble(getPrsnUAS);
+        try {
+            String getNim = textNIM.getText();
+            String getAbsen = textAbsen.getText();
+            String getTugas = textTugas.getText();
+            String getUTS = textUTS.getText();
+            String getUAS = textUAS.getText();
+            String getPrsnAbsen = textPersenAbsen.getText();
+            String getPrsnTugas = textPersenTugas.getText();
+            String getPrsnUTS = textPersenUTS.getText();
+            String getPrsnUAS = textPersenUAS.getText();
+            double absen = Double.parseDouble(getAbsen);
+            double tugas = Double.parseDouble(getTugas);
+            double uts = Double.parseDouble(getUTS);
+            double uas = Double.parseDouble(getUAS);
+            double pAbsen = Double.parseDouble(getPrsnAbsen);
+            double pTugas = Double.parseDouble(getPrsnTugas);
+            double pUts = Double.parseDouble(getPrsnUTS);
+            double pUas = Double.parseDouble(getPrsnUAS);
 
-        double nilaiAkhir = kalkulasi.penilaianMhs(absen, pAbsen, tugas, pTugas, uts, pUts, uas, pUas);
+            double nilaiAkhir = kalkulasi.penilaianMhs(absen, pAbsen, tugas, pTugas, uts, pUts, uas, pUas);
 
-        String query = "UPDATE nilaimhs SET kehadiran='" + absen +"', tugas='" + tugas + "', uts='" + uts +"', uas='" + uas + "', nilaiakhir='" + de.format(nilaiAkhir) + "' WHERE nimmhs=" + getNim;
-        int hasil = konekDB.manipulasiData(query);
-        if (hasil == 1) {
-            System.out.println("Data Berhasil diedit");
-            labelNotif.setText("Data berhasil diedit");
-            tableViewNilaiMhs();
+            String query = "UPDATE nilaimhs SET kehadiran='" + absen + "', tugas='" + tugas + "', uts='" + uts + "', uas='" + uas + "', nilaiakhir='" + de.format(nilaiAkhir) + "' WHERE nimmhs=" + getNim;
+            int hasil = konekDB.manipulasiData(query);
+            if (hasil == 1) {
+                System.out.println("Data Berhasil diedit");
+                labelNotif.setText("Data berhasil diedit");
+                tableViewNilaiMhs();
+            }
+        } catch (Exception e) {
+            System.out.println("Harap pilih data yang akan diedit");
+            labelError.setText("Harap pilih data yang akan diedit");
         }
     }
+
 
     public void buttonHapusNilaiClick(ActionEvent actionEvent) {
         String nim = textNIM.getText();
@@ -189,6 +200,7 @@ public class Controller implements Initializable {
         textTugas.setText("");
         textUTS.setText("");
         textUAS.setText("");
+        labelError.setText("");
 
         tableNilaiMhs.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showDetail(newValue));
@@ -210,6 +222,7 @@ public class Controller implements Initializable {
             textTugas.setText("");
             textUTS.setText("");
             textUAS.setText("");
+            labelError.setText("");
 
         }
     }

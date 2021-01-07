@@ -63,6 +63,7 @@
       <TextField fx:id="textPersenTugas" alignment="CENTER_RIGHT" layoutX="512.0" layoutY="130.0" prefHeight="31.0" prefWidth="46.0" />
       <TextField fx:id="textPersenUTS" alignment="CENTER_RIGHT" layoutX="568.0" layoutY="130.0" prefHeight="31.0" prefWidth="46.0" />
       <TextField fx:id="textPersenUAS" alignment="CENTER_RIGHT" layoutX="620.0" layoutY="130.0" prefHeight="31.0" prefWidth="46.0" />
-      <Label fx:id="labelNotif" layoutX="15.0" layoutY="135.0" textFill="#00b200" />
+      <Label fx:id="labelNotif" layoutX="15.0" layoutY="135.0" prefHeight="21.0" prefWidth="265.0" textFill="#00b200" AnchorPane.bottomAnchor="444.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="520.0" AnchorPane.topAnchor="135.0" />
+      <Label fx:id="labelError" layoutX="25.0" layoutY="145.0" prefHeight="21.0" prefWidth="265.0" textFill="#b00000" AnchorPane.bottomAnchor="444.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="520.0" AnchorPane.topAnchor="135.0" />
    </children>
 </AnchorPane>
