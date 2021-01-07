@@ -65,5 +65,12 @@
          </font>
       </Button>
       <Label fx:id="labelError" layoutX="25.0" layoutY="187.0" prefHeight="21.0" prefWidth="271.0" textFill="#b00000" AnchorPane.topAnchor="177.0" />
+      <Label fx:id="labelTotalSKS" layoutX="491.0" layoutY="520.0" prefHeight="42.0" prefWidth="134.0" text="sks" />
+      <Label fx:id="labelIP" layoutX="667.0" layoutY="531.0" text="ip" />
+      <Button fx:id="buttonHitung" layoutX="362.0" layoutY="541.0" mnemonicParsing="false" onAction="#buttonHitung" prefHeight="37.0" prefWidth="87.0" style="-fx-background-color: #2ECC71;" text="HItung" textFill="WHITE" AnchorPane.bottomAnchor="22.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

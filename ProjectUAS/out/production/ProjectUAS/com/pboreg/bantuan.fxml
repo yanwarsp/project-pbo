@@ -2,20 +2,32 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pboreg.Controller">
    <children>
-      <Button fx:id="home" layoutX="329.0" layoutY="335.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="92.0" prefWidth="143.0" style="-fx-background-color: #2ECC71;" text="Home" textFill="WHITE">
+      <Button fx:id="home" layoutX="14.0" layoutY="538.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="30.0" prefWidth="103.0" style="-fx-background-color: #2ECC71;" text="Home" textFill="WHITE">
          <font>
-            <Font size="24.0" />
+            <Font size="16.0" />
          </font>
       </Button>
-      <Label layoutX="228.0" layoutY="171.0" prefHeight="92.0" prefWidth="488.0" text="INI MENU BANTUAN">
+      <Label alignment="CENTER" layoutX="244.0" layoutY="14.0" prefHeight="59.0" prefWidth="351.0" text="BANTUAN" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
          <font>
-            <Font size="36.0" />
+            <Font size="26.0" />
          </font>
       </Label>
+      <ScrollPane layoutX="14.0" layoutY="73.0" prefHeight="453.0" prefWidth="780.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <content>
+            <AnchorPane prefHeight="624.0" prefWidth="760.0">
+               <children>
+                  <Text layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ASJAJSKJAKSJKAJSJAKJSJAKSSS        ASASASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASASSSSSSSSSSSSSSSSSSSSSS A SASAS AS A SAS AS AS AS AS AS AS ASA AS AS ASASA SA SASASA AS ASAS ZXZ XZXZ ZX ZXZ XZZZZZXZX  ZXZX ZXZ XZX  ASASASASA SASAS SSSAS A   D  FAD F DFA DF AD F    D FAD F DF  AF D AF DA F DA F ADF ADF  DAF  ADF DA F AD FA F A E R AE R  ER A" wrappingWidth="735.458984375" />
+                  <Text layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SDSDSDSDSDSDSDSDSD" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

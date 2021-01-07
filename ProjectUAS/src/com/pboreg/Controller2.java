@@ -25,7 +25,7 @@ public class Controller2 implements Initializable {
 
     DecimalFormat de = new DecimalFormat("#.##"); //  format desimal 2 angka dibelakang koma
     public TextField sksmk, kodemk, namamk, nilaimk;
-    public Label labelNotif, labelError;
+    public Label labelNotif, labelError, labelTotalSKS, labelIP;
     public Button home;
     // ini untuk tabel menu indeks prestasi
     public TableView<OutputIndeksPrestasi> tabelIndeksPrestasi;
@@ -85,7 +85,7 @@ public class Controller2 implements Initializable {
             int nilai = Integer.parseInt(getNilai);
             double hasilBobot = kalkulasi.hitungIp(nilai);
 
-            String query = "UPDATE indeksprestasi SET nilai='" + nilai + "', bobot='" + de.format(hasilBobot) + "' WHERE kodemk=" + getKodeMk;
+            String query = "UPDATE indeksprestasi SET nilai='" + nilai + "', bobot='" + de.format(hasilBobot) + "' WHERE kodemk='" + getKodeMk + "'";
             int hasil = konekDB.manipulasiData(query);
             if (hasil == 1) {
                 System.out.println("Data Berhasil diedit");
@@ -163,5 +163,11 @@ public class Controller2 implements Initializable {
         }
     }
 
-
+    public void buttonHitung(ActionEvent actionEvent) {
+        int totalSavingValue=0;
+        for (int i= 0;i<tabelIndeksPrestasi.getItems().size();i++){
+          int  total = total+Integer.valueOf(String.valueOf(contentTable.getColumns().get(3).getCellObservableValue(i).getValue()));
+        }
+        System.out.println(totalSavingValue);
+    }
 }

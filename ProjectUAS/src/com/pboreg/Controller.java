@@ -159,7 +159,7 @@ public class Controller implements Initializable {
     public void buttonHapusNilaiClick(ActionEvent actionEvent) {
         String nim = textNIM.getText();
         if (!nim.isEmpty()) {
-            String query = "DELETE FROM nilaimhs WHERE nimmhs=" + nim;
+            String query = "DELETE FROM nilaimhs WHERE nimmhs='" + nim + "'";
             int hasil = konekDB.manipulasiData(query);
             if (hasil == 1) {
                 System.out.println("Data berhasil dihapus");
