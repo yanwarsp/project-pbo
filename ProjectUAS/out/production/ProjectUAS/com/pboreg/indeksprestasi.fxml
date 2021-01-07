@@ -20,10 +20,10 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <TextField fx:id="kodemk" layoutX="55.0" layoutY="149.0" prefHeight="25.0" prefWidth="54.0" />
-      <TextField fx:id="namamk" layoutX="132.0" layoutY="149.0" prefHeight="29.0" prefWidth="170.0" />
-      <TextField fx:id="sksmk" layoutX="320.0" layoutY="150.0" prefHeight="25.0" prefWidth="60.0" />
-      <TextField fx:id="nilaimk" layoutX="396.0" layoutY="150.0" prefHeight="25.0" prefWidth="60.0" />
+      <TextField fx:id="kodemk" layoutX="55.0" layoutY="149.0" prefHeight="31.0" prefWidth="71.0" />
+      <TextField fx:id="namamk" layoutX="142.0" layoutY="149.0" prefHeight="29.0" prefWidth="170.0" />
+      <TextField fx:id="sksmk" layoutX="328.0" layoutY="150.0" prefHeight="25.0" prefWidth="60.0" />
+      <TextField fx:id="nilaimk" layoutX="424.0" layoutY="150.0" prefHeight="25.0" prefWidth="60.0" />
       <Button fx:id="tambah" layoutX="591.0" layoutY="144.0" mnemonicParsing="false" onAction="#tambahNilaiMK" prefHeight="42.0" prefWidth="83.0" style="-fx-background-color: #2ECC71;" text="TAMBAH" textFill="WHITE">
          <font>
             <Font size="14.0" />

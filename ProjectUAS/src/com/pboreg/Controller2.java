@@ -68,10 +68,11 @@ public class Controller2 implements Initializable {
             labelNotif.setText("MK berhasil dimasukan");
         }
     }
+
     public void buttonHapusMkClick(ActionEvent actionEvent) {
-        String kodeMK = kodemk.getText();
-        if (!kodeMK.isEmpty()) {
-            String query = "DELETE FROM indeksprestasi WHERE kodemk=" + kodeMK;
+        String kodeMk = kodemk.getText();
+        if (!kodeMk.isEmpty()) {
+            String query = "DELETE FROM indeksprestasi WHERE kodemk=" + kodeMk;
             int hasil = konekDB.manipulasiData(query);
             if (hasil == 1) {
                 System.out.println("MK berhasil dihapus");
