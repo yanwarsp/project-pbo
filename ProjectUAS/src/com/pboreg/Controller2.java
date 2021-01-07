@@ -69,6 +69,7 @@ public class Controller2 implements Initializable {
                 labelNotif.setText("MK berhasil ditambahkan");
             }
         } catch (Exception e) {
+            labelNotif.setText("");
             System.out.println("Harap isi semua field yang kosong");
             labelError.setText("Harap isi semua field yang kosong");
         }
@@ -90,16 +91,18 @@ public class Controller2 implements Initializable {
                 System.out.println("Data Berhasil diedit");
                 labelNotif.setText("Data berhasil diedit");
                 tableViewIndeksPrestasi();
-        }
-    } catch (Exception e) {
+            }
+        } catch (Exception e) {
             System.out.println("Harap pilih data yang akan diedit");
-            labelError.setText("Harap pilih data yang akan diedit");        }
+            labelNotif.setText("");
+            labelError.setText("Harap pilih data yang akan diedit");
+        }
     }
 
     public void buttonHapusMkClick(ActionEvent actionEvent) {
-        String namaMk = namamk.getText();
-        if (!namaMk.isEmpty()) {
-            String query = "DELETE FROM indeksprestasi WHERE namamk=" + namaMk;
+        String kodeMk = namamk.getText();
+        if (!kodeMk.isEmpty()) {
+            String query = "DELETE FROM indeksprestasi WHERE namamk='" + kodeMk + "'";
             int hasil = konekDB.manipulasiData(query);
             if (hasil == 1) {
                 System.out.println("MK berhasil dihapus");
@@ -159,7 +162,6 @@ public class Controller2 implements Initializable {
 
         }
     }
-
 
 
 }

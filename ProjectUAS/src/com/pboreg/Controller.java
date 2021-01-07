@@ -114,6 +114,7 @@ public class Controller implements Initializable {
             }
         } catch (Exception e) {
             System.out.println("Harap isi semua field yang kosong");
+            labelNotif.setText("");
             labelError.setText("Harap isi semua field yang kosong");
         }
     }
@@ -149,6 +150,7 @@ public class Controller implements Initializable {
             }
         } catch (Exception e) {
             System.out.println("Harap pilih data yang akan diedit");
+            labelNotif.setText("");
             labelError.setText("Harap pilih data yang akan diedit");
         }
     }
