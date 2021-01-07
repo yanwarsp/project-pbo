@@ -11,7 +11,7 @@ public class KoneksiDB {
             String user = "root";
             String password = "";
             String url = "jdbc:mysql://localhost:3306/project-pbo";
-            conn = DriverManager.getConnection(url,user,password);
+            conn = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             System.out.println("Error : " + e.getMessage());
         }

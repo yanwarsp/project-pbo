@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
 import java.net.URL;
 import java.sql.ResultSet;
 import java.text.DecimalFormat;
@@ -24,7 +25,7 @@ public class Controller2 implements Initializable {
 
     DecimalFormat de = new DecimalFormat("#.##"); //  format desimal 2 angka dibelakang koma
     public TextField sksmk, kodemk, namamk, nilaimk;
-    public Label labelNotif;
+    public Label labelNotif, labelError;
     public Button home;
     // ini untuk tabel menu indeks prestasi
     public TableView<OutputIndeksPrestasi> tabelIndeksPrestasi;
@@ -49,30 +50,56 @@ public class Controller2 implements Initializable {
         Stage window = (Stage) home.getScene().getWindow();
         window.setScene(new Scene(root));
     }
+
     public void tambahNilaiMK(ActionEvent actionEvent) {
-        String getKodeMk = kodemk.getText();
-        String getMk = namamk.getText();
-        String getSks = sksmk.getText();
-        String getNilai = nilaimk.getText();
-        int sks = Integer.parseInt(getSks);
-        int nilai = Integer.parseInt(getNilai);
-        double hasilBobot = kalkulasi.hitungIp(nilai);
+        try {
+            String getKodeMk = kodemk.getText();
+            String getMk = namamk.getText();
+            String getSks = sksmk.getText();
+            String getNilai = nilaimk.getText();
+            int sks = Integer.parseInt(getSks);
+            int nilai = Integer.parseInt(getNilai);
+            double hasilBobot = kalkulasi.hitungIp(nilai);
 
-
-
-        String query = "INSERT INTO indeksprestasi(kodemk,namamk,sks,nilai,bobot) VALUES('" + getKodeMk + "','" + getMk + "', '" + sks + "' , '" + nilai + "','" + hasilBobot + "')";
-        int hasil = konekDB.manipulasiData(query);
-        if (hasil == 1) {
-            System.out.println("Data berhasil dimasukan");
-            tableViewIndeksPrestasi();
-            labelNotif.setText("MK berhasil dimasukan");
+            String query = "INSERT INTO indeksprestasi(kodemk,namamk,sks,nilai,bobot) VALUES('" + getKodeMk + "','" + getMk + "', '" + sks + "' , '" + nilai + "','" + hasilBobot + "')";
+            int hasil = konekDB.manipulasiData(query);
+            if (hasil == 1) {
+                System.out.println("Data berhasil ditambahkan");
+                tableViewIndeksPrestasi();
+                labelNotif.setText("MK berhasil ditambahkan");
+            }
+        } catch (Exception e) {
+            System.out.println("Harap isi semua field yang kosong");
+            labelError.setText("Harap isi semua field yang kosong");
         }
     }
 
+    public void buttonEditMkClick(ActionEvent actionEvent) {
+        try {
+            String getKodeMk = kodemk.getText();
+            String getMk = namamk.getText();
+            String getSks = sksmk.getText();
+            String getNilai = nilaimk.getText();
+            int sks = Integer.parseInt(getSks);
+            int nilai = Integer.parseInt(getNilai);
+            double hasilBobot = kalkulasi.hitungIp(nilai);
+
+            String query = "UPDATE indeksprestasi SET nilai='" + nilai + "', bobot='" + de.format(hasilBobot) + "' WHERE kodemk=" + getKodeMk;
+            int hasil = konekDB.manipulasiData(query);
+            if (hasil == 1) {
+                System.out.println("Data Berhasil diedit");
+                labelNotif.setText("Data berhasil diedit");
+                tableViewIndeksPrestasi();
+        }
+    } catch (Exception e) {
+            System.out.println("Harap pilih data yang akan diedit");
+            labelError.setText("Harap pilih data yang akan diedit");        }
+    }
+
     public void buttonHapusMkClick(ActionEvent actionEvent) {
-        String kodeMk = kodemk.getText();
-        if (!kodeMk.isEmpty()) {
-            String query = "DELETE FROM indeksprestasi WHERE kodemk=" + kodeMk;
+        String namaMk = namamk.getText();
+        if (!namaMk.isEmpty()) {
+            String query = "DELETE FROM indeksprestasi WHERE namamk=" + namaMk;
             int hasil = konekDB.manipulasiData(query);
             if (hasil == 1) {
                 System.out.println("MK berhasil dihapus");
@@ -110,6 +137,7 @@ public class Controller2 implements Initializable {
         namamk.setText("");
         sksmk.setText("");
         nilaimk.setText("");
+        labelError.setText("");
 
         tabelIndeksPrestasi.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showDetail(newValue));
@@ -131,6 +159,7 @@ public class Controller2 implements Initializable {
 
         }
     }
+
 
 
 }

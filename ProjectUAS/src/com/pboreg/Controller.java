@@ -108,8 +108,8 @@ public class Controller implements Initializable {
             String query = "INSERT INTO nilaimhs(nimmhs,namamhs,kehadiran,tugas,uts,uas,nilaiakhir) VALUES('" + getNim + "','" + getNama + "','" + absen + "','" + tugas + "','" + uts + "','" + uas + "','" + de.format(nilaiAkhir) + "')";
             int hasil = konekDB.manipulasiData(query);
             if (hasil == 1) {
-                System.out.println("Data berhasil dimasukan");
-                labelNotif.setText("Data berhasil dimasukan");
+                System.out.println("Data berhasil ditambahkan");
+                labelNotif.setText("Data berhasil ditambahkan");
                 tableViewNilaiMhs();
             }
         } catch (Exception e) {

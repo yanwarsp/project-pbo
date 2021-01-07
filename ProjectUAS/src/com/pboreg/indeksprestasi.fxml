@@ -10,54 +10,60 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pboreg.Controller2">
    <children>
-      <Button fx:id="home" layoutX="47.0" layoutY="528.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="41.0" prefWidth="71.0" style="-fx-background-color: #2ECC71;" text="Home" textFill="WHITE">
+      <Button fx:id="home" layoutX="14.0" layoutY="531.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="37.0" prefWidth="87.0" style="-fx-background-color: #2ECC71;" text="Home" textFill="WHITE" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="282.0" layoutY="26.0" prefHeight="75.0" prefWidth="285.0" text="INDEKS PRESTASI">
+      <Label alignment="CENTER" layoutX="282.0" layoutY="6.0" prefHeight="75.0" prefWidth="285.0" text="INDEKS PRESTASI">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <TextField fx:id="kodemk" layoutX="55.0" layoutY="149.0" prefHeight="31.0" prefWidth="71.0" />
-      <TextField fx:id="namamk" layoutX="142.0" layoutY="149.0" prefHeight="29.0" prefWidth="170.0" />
-      <TextField fx:id="sksmk" layoutX="328.0" layoutY="150.0" prefHeight="25.0" prefWidth="60.0" />
-      <TextField fx:id="nilaimk" layoutX="424.0" layoutY="150.0" prefHeight="25.0" prefWidth="60.0" />
-      <Button fx:id="tambah" layoutX="591.0" layoutY="144.0" mnemonicParsing="false" onAction="#tambahNilaiMK" prefHeight="42.0" prefWidth="83.0" style="-fx-background-color: #2ECC71;" text="TAMBAH" textFill="WHITE">
+      <TextField fx:id="kodemk" layoutX="55.0" layoutY="149.0" prefHeight="31.0" prefWidth="71.0" AnchorPane.topAnchor="140.0" />
+      <TextField fx:id="namamk" layoutX="150.0" layoutY="140.0" prefHeight="29.0" prefWidth="170.0" AnchorPane.topAnchor="140.0" />
+      <TextField fx:id="sksmk" layoutX="341.0" layoutY="140.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.topAnchor="140.0" />
+      <TextField fx:id="nilaimk" layoutX="424.0" layoutY="150.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.topAnchor="140.0" />
+      <Button fx:id="tambah" layoutX="682.0" layoutY="144.0" mnemonicParsing="false" onAction="#tambahNilaiMK" prefHeight="42.0" prefWidth="83.0" style="-fx-background-color: #2ECC71;" text="Tambah" textFill="WHITE" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="135.0">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <TableView fx:id="tabelIndeksPrestasi" layoutX="34.0" layoutY="205.0" prefHeight="256.0" prefWidth="740.0">
+      <TableView fx:id="tabelIndeksPrestasi" layoutX="34.0" layoutY="205.0" prefHeight="305.0" prefWidth="770.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
          <columns>
             <TableColumn fx:id="kolomKode" prefWidth="116.99999237060547" text="Kode MK" />
-            <TableColumn fx:id="kolomNamaMK" prefWidth="292.0" text="Nama Mata Kuliah" />
-            <TableColumn fx:id="kolomSKS" prefWidth="91.0" text="SKS" />
-            <TableColumn fx:id="kolomNilai" prefWidth="91.0" text="NILAI" />
-            <TableColumn fx:id="kolomBobot" prefWidth="148.0" text="BOBOT" />
+            <TableColumn fx:id="kolomNamaMK" prefWidth="357.0" text="Nama Mata Kuliah" />
+            <TableColumn fx:id="kolomSKS" prefWidth="93.0" text="SKS" />
+            <TableColumn fx:id="kolomNilai" prefWidth="92.0" text="NILAI" />
+            <TableColumn fx:id="kolomBobot" prefWidth="110.0" text="BOBOT" />
          </columns>
       </TableView>
-      <Label layoutX="50.0" layoutY="121.0" prefHeight="20.0" prefWidth="65.0" text="KODE MK">
+      <Label layoutX="60.0" layoutY="116.0" prefHeight="20.0" prefWidth="65.0" text="KODE MK" AnchorPane.topAnchor="116.0">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="157.0" layoutY="119.0" text="NAMA MATA KULIAH">
+      <Label layoutX="170.0" layoutY="116.0" text="NAMA MATA KULIAH" AnchorPane.topAnchor="116.0">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="342.0" layoutY="121.0" text="SKS">
+      <Label layoutX="357.0" layoutY="116.0" text="SKS" AnchorPane.topAnchor="116.0">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="411.0" layoutY="120.0" text="NILAI">
+      <Label layoutX="437.0" layoutY="122.0" text="NILAI" AnchorPane.topAnchor="116.0">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Button fx:id="buttonHapusMK" layoutX="633.0" layoutY="486.0" mnemonicParsing="false" onAction="#buttonHapusMkClick" prefHeight="42.0" prefWidth="83.0" style="-fx-background-color: #D91E18;" text="Hapus" textFill="WHITE">
+      <Button fx:id="buttonHapusMK" layoutX="609.0" layoutY="144.0" mnemonicParsing="false" onAction="#buttonHapusMkClick" prefHeight="42.0" prefWidth="83.0" style="-fx-background-color: #D91E18;" text="Hapus" textFill="WHITE" AnchorPane.rightAnchor="108.0" AnchorPane.topAnchor="135.0">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label fx:id="labelNotif" layoutX="17.0" layoutY="53.0" textFill="#00b200" />
+      <Label fx:id="labelNotif" layoutX="15.0" layoutY="177.0" prefHeight="21.0" prefWidth="271.0" textFill="#00b200" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="177.0" />
+      <Button fx:id="buttonEditMK" layoutX="516.0" layoutY="144.0" mnemonicParsing="false" onAction="#buttonEditMkClick" prefHeight="42.0" prefWidth="83.0" style="-fx-background-color: #F39C12;" text="Edit" textFill="WHITE" AnchorPane.topAnchor="135.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelError" layoutX="25.0" layoutY="187.0" prefHeight="21.0" prefWidth="271.0" textFill="#b00000" AnchorPane.topAnchor="177.0" />
    </children>
 </AnchorPane>
