@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import java.awt.*;
@@ -158,8 +159,12 @@ public class Controller2 implements Initializable {
                 u = jumlahSks + u;
                 z = jumlah + z;
                 e = z / u;
+                de.format(e);
+                de.format(u);
                 String x = "" + e;
+                String q = "" + u;
                 labelIP.setText(x);
+                labelTotalSKS.setText(q);
 
 //                for (int d = 0; d < tabelIndeksPrestasi.getItems().size(); d++){
 //                    int hasilSks = arrayList.get(d);
