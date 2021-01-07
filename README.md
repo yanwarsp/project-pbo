@@ -22,8 +22,7 @@ Tampilan awal terdapat 4 buah menu yaitu :
 - Bantuan
 - Tentang Kami
 
-> Kelompok 6
-
+##Kelompok 6
 ### Nama Kelompok
 -----
 - Kevin Christoper (2019071012)
