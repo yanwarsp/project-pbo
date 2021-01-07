@@ -11,9 +11,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
+import java.awt.*;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.text.DecimalFormat;
@@ -26,7 +32,7 @@ public class Controller2 implements Initializable {
     DecimalFormat de = new DecimalFormat("#.##"); //  format desimal 2 angka dibelakang koma
     public TextField sksmk, kodemk, namamk, nilaimk;
     public Label labelNotif, labelError, labelTotalSKS, labelIP;
-    public Button home;
+    public Button home, buttonHitung;
     // ini untuk tabel menu indeks prestasi
     public TableView<OutputIndeksPrestasi> tabelIndeksPrestasi;
     public TableColumn<OutputIndeksPrestasi, SimpleIntegerProperty> kolomKode;
@@ -37,7 +43,6 @@ public class Controller2 implements Initializable {
 
     private KoneksiDB konekDB = new KoneksiDB();
     private Kalkulasi kalkulasi = new Kalkulasi();
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -125,6 +130,13 @@ public class Controller2 implements Initializable {
             ResultSet hasil = konekDB.getData2(query);
             ObservableList<OutputIndeksPrestasi> outputIndeksPrestasi = FXCollections.observableArrayList();
             tabelIndeksPrestasi.setItems(outputIndeksPrestasi);
+            int r = 10;
+            ArrayList<Integer> arrayList = new ArrayList<Integer>(r);
+            ArrayList<String> arrayList1 = new ArrayList<String>(r);
+
+            double z = 0;
+            double u = 0;
+            double e;
             while (hasil.next()) {
                 String kodeMk = hasil.getString(2);
                 String namaMk = hasil.getString(3);
@@ -132,6 +144,37 @@ public class Controller2 implements Initializable {
                 int nilai = hasil.getInt(5);
                 double bobot = hasil.getDouble(6);
                 outputIndeksPrestasi.add(new OutputIndeksPrestasi(kodeMk, namaMk, sks, nilai, bobot));
+                double jumlah = 0;
+                double jumlahSks = 0;
+                arrayList.add(sks);
+                String b = String.valueOf(bobot);
+                arrayList1.add(b);
+                for (int i = 0; i < tabelIndeksPrestasi.getItems().size(); i++) {
+                    int list = arrayList.get(i);
+                    String list2 = arrayList1.get(i);
+                    jumlahSks = (double) list;
+                    jumlah = (double) list * Double.parseDouble(list2);
+                }
+                u = jumlahSks + u;
+                z = jumlah + z;
+                e = z / u;
+                String x = "" + e;
+                labelIP.setText(x);
+
+//                for (int d = 0; d < tabelIndeksPrestasi.getItems().size(); d++){
+//                    int hasilSks = arrayList.get(d);
+//                    akhir = hasilSks + akhir;
+//                }
+//                u = akhir + u;
+//                String totalAkhir = "" + akhir;
+//                labelTotalSKS.setText(totalAkhir);
+//
+//                double apalah = Double.parseDouble(totalAkhir);
+//                double apalah2 = Double.parseDouble(x);
+//
+//                double hasilFinal = apalah / apalah2;
+//                String hasilFinal2 = "" + hasilFinal;
+//                labelIP.setText(hasilFinal2);
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -159,15 +202,10 @@ public class Controller2 implements Initializable {
             namamk.setText("");
             sksmk.setText("");
             nilaimk.setText("");
-
         }
     }
 
     public void buttonHitung(ActionEvent actionEvent) {
-        int totalSavingValue=0;
-        for (int i= 0;i<tabelIndeksPrestasi.getItems().size();i++){
-          int  total = total+Integer.valueOf(String.valueOf(contentTable.getColumns().get(3).getCellObservableValue(i).getValue()));
-        }
-        System.out.println(totalSavingValue);
+
     }
 }
