@@ -13,7 +13,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.net.URL;
 import java.sql.ResultSet;
 import java.text.DecimalFormat;
@@ -122,6 +121,7 @@ public class Controller implements Initializable {
     public void buttonEditNilaiClick(ActionEvent actionEvent) {
         try {
             String getNim = textNIM.getText();
+            String getNama = textNama.getText();
             String getAbsen = textAbsen.getText();
             String getTugas = textTugas.getText();
             String getUTS = textUTS.getText();
@@ -141,7 +141,7 @@ public class Controller implements Initializable {
 
             double nilaiAkhir = kalkulasi.penilaianMhs(absen, pAbsen, tugas, pTugas, uts, pUts, uas, pUas);
 
-            String query = "UPDATE nilaimhs SET kehadiran='" + absen + "', tugas='" + tugas + "', uts='" + uts + "', uas='" + uas + "', nilaiakhir='" + de.format(nilaiAkhir) + "' WHERE nimmhs=" + getNim;
+            String query = "UPDATE nilaimhs SET nimmhs='" + getNim + "', namamhs='" + getNama + "',kehadiran='" + absen + "', tugas='" + tugas + "', uts='" + uts + "', uas='" + uas + "', nilaiakhir='" + de.format(nilaiAkhir) + "' WHERE nimmhs=" + getNim;
             int hasil = konekDB.manipulasiData(query);
             if (hasil == 1) {
                 System.out.println("Data Berhasil diedit");

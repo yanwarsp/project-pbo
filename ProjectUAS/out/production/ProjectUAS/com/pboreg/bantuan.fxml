@@ -2,32 +2,22 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pboreg.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #5C97BF; -fx-border-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pboreg.Controller">
    <children>
-      <Button fx:id="home" layoutX="14.0" layoutY="538.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="30.0" prefWidth="103.0" style="-fx-background-color: #2ECC71;" text="Home" textFill="WHITE">
+      <Button fx:id="home" layoutX="14.0" layoutY="536.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="37.0" prefWidth="87.0" style="-fx-background-color: #00FF00;" text="Home" textFill="WHITE" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="244.0" layoutY="14.0" prefHeight="59.0" prefWidth="351.0" text="BANTUAN" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+      <Label alignment="CENTER" layoutX="219.0" layoutY="14.0" prefHeight="46.0" prefWidth="362.0" text="MENU BANTUAN" textFill="WHITE">
          <font>
-            <Font size="26.0" />
+            <Font size="28.0" />
          </font>
       </Label>
-      <ScrollPane layoutX="14.0" layoutY="73.0" prefHeight="453.0" prefWidth="780.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
-         <content>
-            <AnchorPane prefHeight="624.0" prefWidth="760.0">
-               <children>
-                  <Text layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ASJAJSKJAKSJKAJSJAKJSJAKSSS        ASASASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASASSSSSSSSSSSSSSSSSSSSSS A SASAS AS A SAS AS AS AS AS AS AS ASA AS AS ASASA SA SASASA AS ASAS ZXZ XZXZ ZX ZXZ XZZZZZXZX  ZXZX ZXZ XZX  ASASASASA SASAS SSSAS A   D  FAD F DFA DF AD F    D FAD F DF  AF D AF DA F DA F ADF ADF  DAF  ADF DA F AD FA F A E R AE R  ER A" wrappingWidth="735.458984375" />
-                  <Text layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SDSDSDSDSDSDSDSDSD" />
-               </children>
-            </AnchorPane>
-         </content>
-      </ScrollPane>
+      <TextArea editable="false" layoutX="27.0" layoutY="92.0" prefHeight="432.0" prefWidth="746.0" style="-fx-background-color: grey; -fx-border-color: bkack;" text="BANTUAN&#10;Berikut adalah cara pemakaian dari button Buku Nilai dan Indeks Prestasi :&#10;&#10;1.Cara pemaiakan dari button Buku Nilai:&#10;&#10;&gt;&gt;Cara input nilai :&#10;&gt; Pertama untuk menambahkan data nilai mahasiswa, user menginput : NIM, Nama Mahasiswa, Kehadiran, Nilai Tugas, Nilai UTS, Nilai UAS dan Persentase Penilaian.&#10;&gt; Lalu klik button “Tambah”. &#10;&gt; Kemudian akan muncul pada table, dan akan muncul nilai akhirnya.&#10;&#10;&gt;&gt; Cara edit nilai :&#10;&gt;Pertama klik list nilai yang ingin diedit pada table.&#10;&gt;Lalu ubah nilai yang ingin diubah.&#10;&gt;Klik button “Edit” dan akan muncul perubahan pada table.&#10;&#10;&gt;&gt; Cara hapus list :&#10;&gt;Petama, klik list yang ingin dihapus.&#10;&gt;Lalu klik button “Hapus”.&#10;&gt;Dan terhapus list yang dipilih.&#10;&#10;2. Cara pemakaian dari button Indeksprestasi:&#10;&#10;&gt;&gt;Cara input nilai:&#10;&gt; Pertama untuk menambahkan data nilai, user menginput : KODE MK, Nama Mahasiswa, SKS, Nilai dan Bobot.&#10;&gt; Lalu klik button “Tambah”. &#10;&gt; Kemudian akan muncul pada table, dan akan muncul nilai IPnya.&#10;&#10;&gt;&gt; Cara hapus list :&#10;&gt;Petama, klik list yang ingin dihapus.&#10;&gt;Lalu klik button “Clear”.&#10;&gt;Dan terhapus list yang dipilih.&#10;&#10;&#10;&gt;&gt; Cara mengkalkulasi nilai akhir menjadi Indeks prestasi&#10;&gt;Setelah memasukan semua list&#10;&gt;Secara otomatis list SKS, Nilai dan Bobot akan dikalkulasikan menjadi Indeks prestasi." AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
    </children>
 </AnchorPane>

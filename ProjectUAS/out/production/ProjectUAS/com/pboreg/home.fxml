@@ -5,19 +5,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pboreg.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #5C97BF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pboreg.Controller">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="132.0" layoutY="14.0" prefHeight="35.0" prefWidth="536.0" text="SELAMAT DATANG DI NILAIKU">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="132.0" layoutY="14.0" prefHeight="35.0" prefWidth="536.0" text="SELAMAT DATANG DI NILAIKU" textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>
       </Label>
-      <Button fx:id="menuNilaiMhs" layoutX="132.0" layoutY="186.0" mnemonicParsing="false" onAction="#menuNilaiClick" prefHeight="114.0" prefWidth="203.0" style="-fx-background-color: #2ECC71;" text="Buku Nilai" textFill="WHITE" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="180.0">
+      <Button fx:id="menuNilaiMhs" layoutX="132.0" layoutY="186.0" mnemonicParsing="false" onAction="#menuNilaiClick" prefHeight="114.0" prefWidth="203.0" style="-fx-background-color: lime;" text="Buku Nilai" textFill="WHITE" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="180.0">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="menuIP" layoutX="465.0" layoutY="186.0" mnemonicParsing="false" onAction="#menuIPClick" prefHeight="114.0" prefWidth="203.0" style="-fx-background-color: #2ECC71;" text="Indeks Prestasi" textFill="WHITE" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="180.0">
+      <Button fx:id="menuIP" layoutX="465.0" layoutY="186.0" mnemonicParsing="false" onAction="#menuIPClick" prefHeight="114.0" prefWidth="203.0" style="-fx-background-color: lime;" text="Indeks Prestasi" textFill="WHITE" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="180.0">
          <font>
             <Font size="24.0" />
          </font>
@@ -32,11 +32,11 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="132.0" layoutY="54.0" prefHeight="35.0" prefWidth="536.0" text="Aplikasi Simulasi Penilaian">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="132.0" layoutY="54.0" prefHeight="35.0" prefWidth="536.0" text="Aplikasi Simulasi Penilaian" textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>
       </Label>
-      <Label layoutX="567.0" layoutY="576.0" prefHeight="21.0" prefWidth="224.0" text="Created by Kelompok 6 PBO-Reg" />
+      <Label layoutX="567.0" layoutY="576.0" prefHeight="21.0" prefWidth="224.0" text="Created by Kelompok 6 PBO-Reg" textFill="WHITE" />
    </children>
 </AnchorPane>

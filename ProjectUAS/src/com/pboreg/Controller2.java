@@ -17,15 +17,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
-import java.awt.*;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.text.DecimalFormat;
-import java.util.ResourceBundle;
-import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller2 implements Initializable {
@@ -33,7 +29,7 @@ public class Controller2 implements Initializable {
     DecimalFormat de = new DecimalFormat("#.##"); //  format desimal 2 angka dibelakang koma
     public TextField sksmk, kodemk, namamk, nilaimk;
     public Label labelNotif, labelError, labelTotalSKS, labelIP;
-    public Button home, buttonHitung;
+    public Button home;
     // ini untuk tabel menu indeks prestasi
     public TableView<OutputIndeksPrestasi> tabelIndeksPrestasi;
     public TableColumn<OutputIndeksPrestasi, SimpleIntegerProperty> kolomKode;
@@ -78,30 +74,6 @@ public class Controller2 implements Initializable {
             labelNotif.setText("");
             System.out.println("Harap isi semua field yang kosong");
             labelError.setText("Harap isi semua field yang kosong");
-        }
-    }
-
-    public void buttonEditMkClick(ActionEvent actionEvent) {
-        try {
-            String getKodeMk = kodemk.getText();
-            String getMk = namamk.getText();
-            String getSks = sksmk.getText();
-            String getNilai = nilaimk.getText();
-            int sks = Integer.parseInt(getSks);
-            int nilai = Integer.parseInt(getNilai);
-            double hasilBobot = kalkulasi.hitungIp(nilai);
-
-            String query = "UPDATE indeksprestasi SET nilai='" + nilai + "', bobot='" + de.format(hasilBobot) + "' WHERE kodemk='" + getKodeMk + "'";
-            int hasil = konekDB.manipulasiData(query);
-            if (hasil == 1) {
-                System.out.println("Data Berhasil diedit");
-                labelNotif.setText("Data berhasil diedit");
-                tableViewIndeksPrestasi();
-            }
-        } catch (Exception e) {
-            System.out.println("Harap pilih data yang akan diedit");
-            labelNotif.setText("");
-            labelError.setText("Harap pilih data yang akan diedit");
         }
     }
 
@@ -159,27 +131,12 @@ public class Controller2 implements Initializable {
                 u = jumlahSks + u;
                 z = jumlah + z;
                 e = z / u;
-                de.format(e);
-                de.format(u);
-                String x = "" + e;
-                String q = "" + u;
+
+                String x = "" + de.format(e);
+                String q = "" + de.format(u);
                 labelIP.setText(x);
                 labelTotalSKS.setText(q);
 
-//                for (int d = 0; d < tabelIndeksPrestasi.getItems().size(); d++){
-//                    int hasilSks = arrayList.get(d);
-//                    akhir = hasilSks + akhir;
-//                }
-//                u = akhir + u;
-//                String totalAkhir = "" + akhir;
-//                labelTotalSKS.setText(totalAkhir);
-//
-//                double apalah = Double.parseDouble(totalAkhir);
-//                double apalah2 = Double.parseDouble(x);
-//
-//                double hasilFinal = apalah / apalah2;
-//                String hasilFinal2 = "" + hasilFinal;
-//                labelIP.setText(hasilFinal2);
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -208,9 +165,5 @@ public class Controller2 implements Initializable {
             sksmk.setText("");
             nilaimk.setText("");
         }
-    }
-
-    public void buttonHitung(ActionEvent actionEvent) {
-
     }
 }

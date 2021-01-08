@@ -6,18 +6,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #fff294;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pboreg.Controller">
-    <children>
-        <Button fx:id="home" layoutX="14.0" layoutY="536.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="50.0" prefWidth="133.0" style="-fx-background-color: #2ECC71;" text="Home" textFill="WHITE">
-            <font>
-                <Font size="24.0" />
-            </font>
-        </Button>
-        <Label alignment="CENTER" layoutX="176.0" prefHeight="92.0" prefWidth="488.0" text="MENU BANTUAN">
-            <font>
-                <Font size="36.0" />
-            </font>
-        </Label>
-      <TextArea editable="false" layoutX="27.0" layoutY="92.0" prefHeight="422.0" prefWidth="746.0" style="-fx-background-color: black;" text="BANTUAN&#10;Berikut adalah cara pemakaian dari button Buku Nilai dan Indeks Prestasi :&#10;&#10;1.Cara pemaiakan dari button Buku Nilai:&#10;&#10;&gt;&gt;Cara input nilai :&#10;&gt; Pertama untuk menambahkan data nilai mahasiswa, user menginput : NIM, Nama Mahasiswa, Kehadiran, Nilai Tugas, Nilai UTS, Nilai UAS dan Persentase Penilaian.&#10;&gt; Lalu klik button “Tambah”. &#10;&gt; Kemudian akan muncul pada table, dan akan muncul nilai akhirnya.&#10;&#10;&gt;&gt; Cara edit nilai :&#10;&gt;Pertama klik list nilai yang ingin diedit pada table.&#10;&gt;Lalu ubah nilai yang ingin diubah.&#10;&gt;Klik button “Edit” dan akan muncul perubahan pada table.&#10;&#10;&gt;&gt; Cara hapus list :&#10;&gt;Petama, klik list yang ingin dihapus.&#10;&gt;Lalu klik button “Hapus”.&#10;&gt;Dan terhapus list yang dipilih.&#10;&#10;2. Cara pemaiakan dari button Indeksprestasi:&#10;&#10;&gt;&gt;Cara input nilai:&#10;&gt; Pertama untuk menambahkan data nilai, user menginput : KODE MK, Nama Mahasiswa, SKS, Nilai dan Bobot.&#10;&gt; Lalu klik button “Tambah”. &#10;&gt; Kemudian akan muncul pada table, dan akan muncul nilai IPnya.&#10;&#10;&gt;&gt; Cara hapus list :&#10;&gt;Petama, klik list yang ingin dihapus.&#10;&gt;Lalu klik button “Clear”.&#10;&gt;Dan terhapus list yang dipilih.&#10;" />
-    </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #5C97BF; -fx-border-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pboreg.Controller">
+   <children>
+      <Button fx:id="home" layoutX="14.0" layoutY="536.0" mnemonicParsing="false" onAction="#homeClick" prefHeight="37.0" prefWidth="87.0" style="-fx-background-color: #00FF00;" text="Home" textFill="WHITE" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="15.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="219.0" layoutY="14.0" prefHeight="46.0" prefWidth="362.0" text="MENU BANTUAN" textFill="WHITE">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <TextArea editable="false" layoutX="27.0" layoutY="92.0" prefHeight="432.0" prefWidth="746.0" style="-fx-background-color: grey; -fx-border-color: bkack;" text="BANTUAN&#10;Berikut adalah cara pemakaian dari button Buku Nilai dan Indeks Prestasi :&#10;&#10;1.Cara pemaiakan dari button Buku Nilai:&#10;&#10;&gt;&gt;Cara input nilai :&#10;&gt; Pertama untuk menambahkan data nilai mahasiswa, user menginput : NIM, Nama Mahasiswa, Kehadiran, Nilai Tugas, Nilai UTS, Nilai UAS dan Persentase Penilaian.&#10;&gt; Lalu klik button “Tambah”. &#10;&gt; Kemudian akan muncul pada table, dan akan muncul nilai akhirnya.&#10;&#10;&gt;&gt; Cara edit nilai :&#10;&gt;Pertama klik list nilai yang ingin diedit pada table.&#10;&gt;Lalu ubah nilai yang ingin diubah.&#10;&gt;Klik button “Edit” dan akan muncul perubahan pada table.&#10;&#10;&gt;&gt; Cara hapus list :&#10;&gt;Petama, klik list yang ingin dihapus.&#10;&gt;Lalu klik button “Hapus”.&#10;&gt;Dan terhapus list yang dipilih.&#10;&#10;2. Cara pemakaian dari button Indeksprestasi:&#10;&#10;&gt;&gt;Cara input nilai:&#10;&gt; Pertama untuk menambahkan data nilai, user menginput : KODE MK, Nama Mahasiswa, SKS, Nilai dan Bobot.&#10;&gt; Lalu klik button “Tambah”. &#10;&gt; Kemudian akan muncul pada table, dan akan muncul nilai IPnya.&#10;&#10;&gt;&gt; Cara hapus list :&#10;&gt;Petama, klik list yang ingin dihapus.&#10;&gt;Lalu klik button “Clear”.&#10;&gt;Dan terhapus list yang dipilih.&#10;&#10;&#10;&gt;&gt; Cara mengkalkulasi nilai akhir menjadi Indeks prestasi&#10;&gt;Setelah memasukan semua list&#10;&gt;Secara otomatis list SKS, Nilai dan Bobot akan dikalkulasikan menjadi Indeks prestasi." AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+   </children>
 </AnchorPane>
